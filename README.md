@@ -114,3 +114,32 @@ To run the function locally or run the tests, follow these steps:
     ```bash
     PYTHONPATH=. pytest
     ```
+
+### Running the Function Locally
+
+To run the function on your local machine for development and testing, you can use the Google Cloud Functions Framework.
+
+1.  **Install the Functions Framework**:
+    ```bash
+    pip install functions-framework
+    ```
+
+2.  **Run the Local Server**:
+    The entry point to the application is the `handler` function in `main.py`. To start a local server, run the following command from the root of the repository:
+    ```bash
+    functions-framework --target=handler
+    ```
+    The server will start on `http://localhost:8080`.
+
+3.  **Test the Endpoints**:
+    You can now send requests to the local server using `curl` or any other HTTP client.
+
+    *   **Search Endpoint**:
+        ```bash
+        curl "http://localhost:8080/search?query=Apple"
+        ```
+
+    *   **Price Endpoint**:
+        ```bash
+        curl "http://localhost:8080/price?ticker=AAPL"
+        ```
